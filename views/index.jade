@@ -18,7 +18,25 @@ block content
   .displayDiscs Mongo Discing!!
     ul
       for disc in discs
-        li
+        li(data-id=disc.id)
           strong= disc.title
           p= disc.body
+          button.editDisc.btn.btn-default Edit Disc
+
+  #edit-modal.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span &times;
+            h4.modal-title Edit this Disc
+          form#edit-form(action="/api/post", method="put")
+            input.disc-id(type="hidden")
+            .modal-body
+              .form-group
+                input.disc-name.form-control(type="text", placeholder="disc name", name="title")
+              .form-group
+                input.disc-abv.form-control(type="text", name="body")
+            .modal-footer
+              input.btn.btn-primary(type="submit", value="Save Changes")
 
