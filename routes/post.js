@@ -35,7 +35,7 @@ router.post('/posts', function(req, res, next){
   		return res.send(err)
 		}
 	
-		res.render('index', {results: results, title: "Disco Golfer"});
+		res.redirect('/');
 		// res.send('hola discgolfer');
 	});
 });
