@@ -15,3 +15,10 @@ block content
     .form-group
       .col-sm-offset-2.col-sm-10
         button.btn.btn-default(type='submit') Submit Post
+  .displayDiscs Mongo Discing!!
+    ul
+      for disc in discs
+        li
+          strong= disc.title
+          p= disc.body
+
